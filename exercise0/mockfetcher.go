@@ -8,32 +8,32 @@ package main
 
 import "fmt"
 
-// fakeFetcher is Fetcher that returns canned results. Taken from
+// MockFetcher is Fetcher that returns canned results. Taken from
 // https://tour.golang.org/concurrency/10
-type fakeFetcher map[string]*fakeResult
+type MockFetcher map[string]*mockResult
 
-type fakeResult struct {
+type mockResult struct {
 	body string
 	urls []string
 }
 
-func (f fakeFetcher) Fetch(url string) (string, []string, error) {
+func (f MockFetcher) Fetch(url string) (string, []string, error) {
 	if res, ok := f[url]; ok {
 		return res.body, res.urls, nil
 	}
 	return "", nil, fmt.Errorf("not found: %s", url)
 }
 
-// fetcher is a populated fakeFetcher.
-var fetcher = fakeFetcher{
-	"http://golang.org/": &fakeResult{
+// fetcher is a populated MockFetcher.
+var fetcher = MockFetcher{
+	"http://golang.org/": &mockResult{
 		"The Go Programming Language",
 		[]string{
 			"http://golang.org/pkg/",
 			"http://golang.org/cmd/",
 		},
 	},
-	"http://golang.org/pkg/": &fakeResult{
+	"http://golang.org/pkg/": &mockResult{
 		"Packages",
 		[]string{
 			"http://golang.org/",
@@ -42,14 +42,14 @@ var fetcher = fakeFetcher{
 			"http://golang.org/pkg/os/",
 		},
 	},
-	"http://golang.org/pkg/fmt/": &fakeResult{
+	"http://golang.org/pkg/fmt/": &mockResult{
 		"Package fmt",
 		[]string{
 			"http://golang.org/",
 			"http://golang.org/pkg/",
 		},
 	},
-	"http://golang.org/pkg/os/": &fakeResult{
+	"http://golang.org/pkg/os/": &mockResult{
 		"Package os",
 		[]string{
 			"http://golang.org/",
