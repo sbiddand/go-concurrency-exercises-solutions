@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/mindworker/go-concurrency-exercises.svg?branch=master)](https://travis-ci.org/mindworker/go-concurrency-exercises)
 # go-concurrency-exercises
 Exercises for Golang's Concurrency Patterns
 
