@@ -1,4 +1,4 @@
-# go-concurrency-exercises [![Build Status](https://travis-ci.org/mindworker/go-concurrency-exercises.svg?branch=master)](https://travis-ci.org/mindworker/go-concurrency-exercises) [![Go Report](https://goreportcard.com/badge/github.com/mindworker/go-concurrency-exercises)](https://goreportcard.com/report/github.com/mindworker/go-concurrency-exercises)
+# go-concurrency-exercises [![Build Status](https://travis-ci.org/mindworker/go-concurrency-exercises.svg?branch=master)](https://travis-ci.org/mindworker/go-concurrency-exercises) [![Go Report Card](https://goreportcard.com/badge/github.com/mindworker/go-concurrency-exercises)](https://goreportcard.com/report/github.com/mindworker/go-concurrency-exercises)
 
 Exercises for Golang's Concurrency Patterns
 
