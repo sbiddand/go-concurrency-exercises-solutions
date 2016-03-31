@@ -1,6 +1,10 @@
 # go-concurrency-exercises [![Build Status](https://travis-ci.org/mindworker/go-concurrency-exercises.svg?branch=master)](https://travis-ci.org/mindworker/go-concurrency-exercises) [![Go Report Card](https://goreportcard.com/badge/github.com/mindworker/go-concurrency-exercises)](https://goreportcard.com/report/github.com/mindworker/go-concurrency-exercises)
 
-Exercises for Golang's Concurrency Patterns
+Exercises for Golang's Concurrency Patterns.
+
+# Rules
+1. *Only edit `main.go`* to solve the problems. Do not touch any of the other files.
+2. *Do not publish* any solutions, instead join us on [Slack](https://gophersinvite.herokuapp.com/)! I'm sure there will be people who are happy to give you some code review (if not, find me via @beertocode ;) )
 
 # License
 ```
