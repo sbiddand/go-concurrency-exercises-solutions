@@ -13,7 +13,7 @@ import (
 	"sync"
 )
 
-// Crawl uses `fetcher` from the `mockfetcher.go` file to immitate a
+// Crawl uses `fetcher` from the `mockfetcher.go` file to imitate a
 // real crawler. It crawls until the maximum depth has reached.
 func Crawl(url string, depth int, wg *sync.WaitGroup) {
 	defer wg.Done()

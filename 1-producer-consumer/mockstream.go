@@ -12,7 +12,7 @@ import (
 	"time"
 )
 
-// GetStream is a blackbox function which returns a mock stream for
+// GetMockStream is a blackbox function which returns a mock stream for
 // demonstration purposes
 func GetMockStream() Stream {
 	return Stream{0, mockdata}
@@ -24,7 +24,8 @@ type Stream struct {
 	tweets []Tweet
 }
 
-var EOF = errors.New("End of File")
+// ErrEOF returns on End of File error
+var ErrEOF = errors.New("End of File")
 
 // Next returns the next Tweet in the stream, returns EOF error if
 // there are no more tweets
@@ -33,7 +34,7 @@ func (s *Stream) Next() (*Tweet, error) {
 	// simulate delay
 	time.Sleep(320 * time.Millisecond)
 	if s.pos >= len(s.tweets) {
-		return &Tweet{}, EOF
+		return &Tweet{}, ErrEOF
 	}
 
 	tweet := s.tweets[s.pos]
@@ -42,11 +43,13 @@ func (s *Stream) Next() (*Tweet, error) {
 	return &tweet, nil
 }
 
+// Tweet defines the simlified representation of a tweet
 type Tweet struct {
 	Username string
 	Text     string
 }
 
+// IsTalkingAboutGo is a mock process which pretend to be a sophisticated procedure to analyse whether tweet is talking about go or not
 func (t *Tweet) IsTalkingAboutGo() bool {
 	// simulate delay
 	time.Sleep(110 * time.Millisecond)

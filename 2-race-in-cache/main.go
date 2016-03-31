@@ -10,6 +10,7 @@ package main
 
 import "container/list"
 
+// CacheSize determines how big the cache can grow
 const CacheSize = 100
 
 // KeyStoreCacheLoader is an interface for the KeyStoreCache
@@ -43,7 +44,7 @@ func (k *KeyStoreCache) Get(key string) string {
 		k.pages.PushFront(key)
 
 		// if cache is full remove the least used item
-		if len(k.cache) > 100 {
+		if len(k.cache) > CacheSize {
 			delete(k.cache, k.pages.Back().Value.(string))
 			k.pages.Remove(k.pages.Back())
 		}

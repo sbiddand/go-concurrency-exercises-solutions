@@ -16,13 +16,15 @@ const (
 	callsPerCycle = 100
 )
 
+// RunMockServer simulates a running server, which accesses the
+// key-value database through our cache
 func RunMockServer(cache *KeyStoreCache) {
 	var wg sync.WaitGroup
 
 	for c := 0; c < cycles; c++ {
 		wg.Add(1)
 		go func() {
-			for i := 0; i < cycles; i++ {
+			for i := 0; i < callsPerCycle; i++ {
 
 				cache.Get("Test" + strconv.Itoa(i))
 

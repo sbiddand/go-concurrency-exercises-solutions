@@ -23,7 +23,7 @@ func main() {
 	// Producer
 	for {
 		tweet, err := stream.Next()
-		if err == EOF {
+		if err == ErrEOF {
 			break
 		}
 
