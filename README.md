@@ -1,6 +1,10 @@
-# go-concurrency-exercises [![Build Status](https://travis-ci.org/mindworker/go-concurrency-exercises.svg?branch=master)](https://travis-ci.org/mindworker/go-concurrency-exercises) [![Go Report Card](https://goreportcard.com/badge/github.com/mindworker/go-concurrency-exercises)](https://goreportcard.com/report/github.com/mindworker/go-concurrency-exercises)
+# Go Concurrency Exercises [![Build Status](https://travis-ci.org/mindworker/go-concurrency-exercises.svg?branch=master)](https://travis-ci.org/mindworker/go-concurrency-exercises) [![Go Report Card](https://goreportcard.com/badge/github.com/mindworker/go-concurrency-exercises)](https://goreportcard.com/report/github.com/mindworker/go-concurrency-exercises)
+Exercises for Golang's concurrency patterns.
 
-Exercises for Golang's Concurrency Patterns.
+# Why
+The Go community has plenty resources to read about go's concurrency model and how to use it effectively. But *who actually wants to read all this*!? This repo tries to teach concurrency patterns by following the 'learning by doing' approach.
+
+![Image of excited gopher](https://golang.org/doc/gopher/pkg.png)
 
 # Rules
 1. *Only edit `main.go`* to solve the problems. Do not touch any of the other files.
