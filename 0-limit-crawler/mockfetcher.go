@@ -19,6 +19,7 @@ type mockResult struct {
 
 // Fetch pretends to retrieve the URLs and its subpages
 func (f MockFetcher) Fetch(url string) (string, []string, error) {
+	fetchSignalInstance() <- true
 	if res, ok := f[url]; ok {
 		return res.body, res.urls, nil
 	}
@@ -57,4 +58,20 @@ var fetcher = MockFetcher{
 			"http://golang.org/pkg/",
 		},
 	},
+}
+
+//////////////////////////////////////////////////////////////////////
+// Code below is mainly used to test whether a solution is correct or
+// not
+
+// fetchSignal is used to test whether the solution is correct
+var fetchSignal chan bool
+
+// fetchSignalInstance is a singleton to access fetchSignal
+func fetchSignalInstance() chan bool {
+	if fetchSignal == nil {
+		// Use buffered channel to avoid blocking
+		fetchSignal = make(chan bool, 1000)
+	}
+	return fetchSignal
 }
