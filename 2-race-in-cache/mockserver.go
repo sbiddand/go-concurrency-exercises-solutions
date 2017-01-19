@@ -29,8 +29,8 @@ func RunMockServer(cache *KeyStoreCache) {
 				cache.Get("Test" + strconv.Itoa(i))
 
 			}
+			wg.Done()
 		}()
-		wg.Done()
 	}
 
 	wg.Wait()
