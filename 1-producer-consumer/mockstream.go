@@ -52,7 +52,7 @@ type Tweet struct {
 // IsTalkingAboutGo is a mock process which pretend to be a sophisticated procedure to analyse whether tweet is talking about go or not
 func (t *Tweet) IsTalkingAboutGo() bool {
 	// simulate delay
-	time.Sleep(110 * time.Millisecond)
+	time.Sleep(330 * time.Millisecond)
 
 	hasGolang := strings.Contains(strings.ToLower(t.Text), "golang")
 	hasGopher := strings.Contains(strings.ToLower(t.Text), "gopher")
