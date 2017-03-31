@@ -14,21 +14,21 @@ import (
 func TestMain(t *testing.T) {
 	fetchSig := fetchSignalInstance()
 
-	start := time.Now()
-	go func() {
+	start := time.Unix(0, 0)
+	go func(start time.Time) {
 		for {
 			switch {
 			case <-fetchSig:
 				// Check if signal arrived earlier than a second (with error margin)
-				if time.Now().Sub(start).Nanoseconds() < 990000000 {
-					t.Log("There exists a two crawls who were executed less than 1 sec apart.")
+				if time.Now().Sub(start).Nanoseconds() < 950000000 {
+					t.Log("There exists a two crawls that were executed less than 1 second apart.")
 					t.Log("Solution is incorrect.")
 					t.FailNow()
 				}
 				start = time.Now()
 			}
 		}
-	}()
+	}(start)
 
 	main()
 }
