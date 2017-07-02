@@ -4,7 +4,7 @@
 // page per second, while maintaining concurrency (in other words,
 // Crawl() must be called concurrently)
 //
-// @hint: you can archive this by adding 3 lines
+// @hint: you can achieve this by adding 3 lines
 //
 
 package main
