@@ -41,6 +41,7 @@ func (k *KeyStoreCache) Get(key string) string {
 	// Miss - load from database and save it in cache
 	if !ok {
 		val = k.load(key)
+		k.cache[key] = val
 		k.pages.PushFront(key)
 
 		// if cache is full remove the least used item
