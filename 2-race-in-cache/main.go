@@ -69,11 +69,17 @@ func (l *Loader) Load(key string) string {
 	return val
 }
 
-func main() {
+func run() *KeyStoreCache {
 	loader := Loader{
 		DB: GetMockDB(),
 	}
 	cache := New(&loader)
 
 	RunMockServer(cache)
+
+	return cache
+}
+
+func main() {
+	run()
 }
