@@ -9,15 +9,15 @@ are fine, but multiple writers are not.
 
 # Test your solution
 
-Use the following command to test for race conditions:
+Use the following command to test for race conditions and correct functionality:
 ```
-go run -race *.go
+go test -race
 ```
 
 Correct solution:
 No output = solution correct:
 ```
-$ go run -race *.go
+$ go test -race
 $
 ```
 
